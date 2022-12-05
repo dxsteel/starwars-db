@@ -94,6 +94,8 @@ export default class App extends Component {
       <div className="stardb-app">
         <Header onServiceChange={this.onServiceChange} />
         { planet }
+        {personDetails}
+        {starshipDetails}
         <button
           className="toggle-planet btn btn-warning btn-lg"
           onClick={this.toggleRandomPlanet}>
