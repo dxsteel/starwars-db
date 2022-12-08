@@ -1,5 +1,6 @@
 import { withData } from 'components/Helpers';
 import SwapiService from 'services/SwapiService';
+import  PropTypes  from 'prop-types';
 import './ItemList.css';
 
 const ItemList = (props) => {
@@ -24,6 +25,16 @@ const ItemList = (props) => {
       {items}
     </ul>
   );
+};
+
+ItemList.defaultProps = {
+  onItemSelected: () => {}
+};
+
+ItemList.protoTypes = {
+  onItemSelected: PropTypes.func,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  children: PropTypes.func.isRequired
 };
 
 const { getAllPeople } = new SwapiService();
